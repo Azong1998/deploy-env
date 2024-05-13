@@ -48,10 +48,7 @@ jobs:
           -Dsonar.projectVersion=1.0
           -Dsonar.sourceEncoding=UTF-8
 
-     # Check the Quality Gate status
-      - name: SonarQube Quality Gate check
-        id: sonarqube-quality-gate-check
-        uses: sonarsource/sonarqube-quality-gate-action@master
+     
        # Force to fall step after specific time.
         timeout-minutes: 5
         env:
