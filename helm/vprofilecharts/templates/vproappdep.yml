@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: vroapp
+  name: vproapp
   labels: 
-    app: vroapp
+    app: vproapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: vroapp
+      app: vproapp
   template:
     metadata:
       labels:
-        app: vroapp
+        app: vproapp
     spec:
       containers:
-        - name: vroapp
+        - name: vproapp
           image: {{ .Values.appimage}}:{{ .Values.apptag}}
           ports:
             - name: vproapp-port
