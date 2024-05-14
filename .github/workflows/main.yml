@@ -96,7 +96,7 @@ jobs:
         run: cat ~/.kube/config
         
       - name: Login to ECR
-        run: kubectl create secret docker-registry regcred --docker-server=DOCKER_REGISTRY_SERVER --docker-username=DOCKER_USER --docker-password=DOCKER_PASSWORD --docker-email=DOCKER_EMAIL --dry-run=client -o yaml | kubectl apply -f -
+        run: kubectl create secret docker-registry regcred --docker-server=${{ secrets.REGISTRY }} --docker-username=AWS  --docker-password=$(aws ecr get-login-password)
 
 
         
